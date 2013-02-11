@@ -1,0 +1,101 @@
+* {	box-sizing: border-box;}
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}							
+
+/*  0F477C */
+
+ul {list-style: none;}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}		
+
+body {
+	margin: 1em auto;
+	width: 90%;
+
+	background: #E5E5DF;
+	color: #423C33;
+	line-height: 1.4;
+	font-size: 120%;
+	font-family: "freight-sans-pro-1","freight-sans-pro-2", sans-serif;
+}
+
+h1 {
+	margin-bottom: 0.5em;
+
+	font-family: "freight-micro-pro-1","freight-micro-pro-2";
+	font-size: 150%;
+	font-weight: normal;
+	text-transform: lowercase;
+}
+
+p {
+	margin-bottom: 1em;
+}
+
+.intro {
+	font-size: 80%;
+}
+
+label {
+	margin-bottom: 0.5em;
+}
+
+input[type="text"]{
+	display: inline-block;
+	width: 85%;
+	border: 1px solid #fff;
+	border-right: none;
+	float: left;
+	height: 44px;
+	padding: 3px 5px;
+	margin-bottom: 0.5em;
+
+	font-family: "freight-sans-pro-1","freight-sans-pro-2", sans-serif;
+	font-size: 1em;
+
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;	
+	-webkit-appearance: none;
+}
+
+.button {
+	display: inline-block;
+	float: left;
+	height: 44px;
+	padding: 3px 5px;
+	width: 15%;
+
+	background-color: #DC6F61;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 38px;
+}
+
+
+#beers li {
+	margin-bottom: 0.5em;
+}
+
+.copyright {
+	font-size: 70%;
+	text-align: center;
+}
