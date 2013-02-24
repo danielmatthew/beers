@@ -13,7 +13,13 @@ function addBeer(){
 	if (document.getElementById("beerName").value) {
 		var timestamp = new Date().getTime();
 		var beer = document.getElementById("beerName").value;
-		localStorage.setItem(timestamp, beer);		
+		localStorage.setItem(timestamp, beer);
+		var beers = document.getElementById("beers");
+		var li = document.createElement("li");
+		var t = document.createTextNode();
+		t.data = beer;
+		li.appendChild(t);
+		beers.appendChild(li);		
 	}
 }
 
