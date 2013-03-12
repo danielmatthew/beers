@@ -54,7 +54,7 @@ label {
 	margin-bottom: 0.5em;
 }
 
-input[type="text"]{
+input[type="text"], input[type="password"]{
 	display: inline-block;
 	width: 85%;
 	border: 1px solid #fff;
@@ -105,4 +105,13 @@ button {
 .copyright {
 	font-size: 70%;
 	text-align: center;
+}
+
+.fade {
+	-webkit-animation: backgroundFade 5s;
+}
+
+@-webkit-keyframes backgroundFade {
+	0% {background-color: yellow;}
+	100% {background-color: inherit;}
 }

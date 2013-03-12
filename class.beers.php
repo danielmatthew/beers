@@ -27,10 +27,11 @@ class Beers
 	}
 	
 
-	public function getBeers()
+	public function getBeers($userId = null)
 	{
 		$sql = "SELECT *
 				FROM beers
+				WHERE user_id = ".$userId."
 				ORDER BY id DESC LIMIT 10";
 				
 		if($stmt = $this->_db->prepare($sql))
@@ -38,14 +39,13 @@ class Beers
 			$stmt->execute();
 			
 			while($row = $stmt->fetch(PDO::FETCH_ASSOC))
-			//var_dump($row);
 			{
-			
+				$beerId = $row['id'];
 				$beerName = $row['name'];
 				$beerRating = $row['rating'];
 				$beerDescription = $row['description'];
-								
-				echo '<li>' . $beerName . '</li>';
+				//renderBeerItem($beerName);				
+				echo '<li id="'.$beerId.'">' . $beerName . '</li>';
 			}
 			
 			$stmt->closeCursor();
@@ -56,7 +56,7 @@ class Beers
 		}
 
 	}
-	
+
 	/**
 	* Adds new beer to database
 	* @return mixed: ID of new film on success
@@ -82,8 +82,8 @@ class Beers
 			//$stmt->bindParam(':summary', $summary, PDO::PARAM_STR);		
 			$stmt->execute();
 			$stmt->closeCursor();
-					
-			return $this->_db->lastInsertId();
+
+			return $beerName;
 		}
 		catch(PDOException $e)
 		{

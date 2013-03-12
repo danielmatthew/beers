@@ -1,9 +1,3 @@
-<?php 
-include_once 'db_connection.php';
-include_once 'class.beers.php';
-$beers = new Beers($db);
-session_start();
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,22 +28,14 @@ session_start();
 </head>
 <body>
 	<h1>BYOB</h1>
-	<p class="intro">Like beer? Keep track of your tipples with this handy app.</p>
-	<form id="addBeer" class="group" method="POST">
+	<form id="login" class="group" method="POST" action="user_login.php">
 		<div>
-			<input type="text" id="beerName" name="beerName" placeholder="An example pint" autocorrect="off"></input>
-			<button id="add" class="button" type="submit">+</button>
+			<input type="text" id="username" name="username" placeholder="Your username" autocorrect="off" autocomplete="off"></input>
+			<button id="add" class="" type="submit">Login</button>
 		</div>
 	</form>
-	<ul id="beers">
-		<?php 
-			$beers->getBeers(1);
-		?>
-	</ul>
 	<footer>
 		<p class="copyright">&copy; 2013 Dashing Rogues</p>
-	</footer>
-	<!--<script type="text/javascript" src="beers.js"></script>-->
-	<script type="text/javascript" src="ajax.js"></script>
+	</footer>	
 </body>
 </html>
