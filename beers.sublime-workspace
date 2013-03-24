@@ -1,0 +1,1182 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tech",
+				"technology"
+			],
+			[
+				"stmt",
+				"stmt  (variable)"
+			],
+			[
+				"stm",
+				"stmt  (variable)"
+			],
+			[
+				"trans",
+				"transition:   (property)"
+			],
+			[
+				"solid",
+				"solid  (value)"
+			],
+			[
+				"no",
+				"no-repeat  (value)"
+			],
+			[
+				"vi",
+				"visibility:   (property)"
+			],
+			[
+				"img",
+				"img  (element)"
+			],
+			[
+				"border",
+				"border-left:   (property)"
+			],
+			[
+				"li",
+				"list: list-style-image: url"
+			],
+			[
+				"list",
+				"list-style-position:   (property)"
+			],
+			[
+				"ul",
+				"ul>  (element)"
+			],
+			[
+				"class",
+				"class=  (attribute)"
+			],
+			[
+				"auto",
+				"auto  (value)"
+			],
+			[
+				"ver",
+				"vertical-align:   (property)"
+			],
+			[
+				"line",
+				"line-height:   (property)"
+			],
+			[
+				"large",
+				"larger  (value)"
+			],
+			[
+				"inline",
+				"inline  (value)"
+			],
+			[
+				"style",
+				"list-style:   (property)"
+			],
+			[
+				"p",
+				"p>  (element)"
+			],
+			[
+				"ol",
+				"ol>  (element)"
+			],
+			[
+				"tran",
+				"transition:   (property)"
+			],
+			[
+				"hover",
+				"hover  (pseudo-class)"
+			],
+			[
+				"background",
+				"background: background-attachment: scroll/fixed"
+			],
+			[
+				"a",
+				"a  (element)"
+			],
+			[
+				"co",
+				"contain  (value)"
+			],
+			[
+				"webkit",
+				"-webkit-transform:   (property)"
+			],
+			[
+				"posi",
+				"position:   (property)"
+			],
+			[
+				"abs",
+				"absolute  (value)"
+			],
+			[
+				"href",
+				"href=  (attribute)"
+			],
+			[
+				"inl",
+				"inline-block  (value)"
+			],
+			[
+				"text",
+				"text: text-align: left/center/right"
+			],
+			[
+				"h1",
+				"h1  (element)"
+			],
+			[
+				"lower",
+				"lowercase  (value)"
+			],
+			[
+				"c",
+				"center  (value)"
+			],
+			[
+				"sans",
+				"sans-serif  (value)"
+			],
+			[
+				"dis",
+				"display: display: block"
+			],
+			[
+				"h2",
+				"h2>  (element)"
+			],
+			[
+				"var_",
+				"var_dump  (function)"
+			],
+			[
+				"_SE",
+				"_SESSION  (variable)"
+			],
+			[
+				"ENT",
+				"ENT_QUOTES  (constant)"
+			],
+			[
+				"html",
+				"htmlentities"
+			],
+			[
+				"PDOE",
+				"PDOException  (class)"
+			],
+			[
+				"header",
+				"header"
+			],
+			[
+				"beerId",
+				"beerId  (variable)"
+			],
+			[
+				"add",
+				"addEventListener"
+			],
+			[
+				"n",
+				"normal  (value)"
+			],
+			[
+				"relat",
+				"relative  (value)"
+			],
+			[
+				"ab",
+				"absolute  (value)"
+			],
+			[
+				"inlin",
+				"inline-block  (value)"
+			],
+			[
+				"blo",
+				"blockquote  (element)"
+			],
+			[
+				"bl",
+				"blockquote>  (element)"
+			],
+			[
+				"span",
+				"span>  (element)"
+			],
+			[
+				"norma",
+				"normal  (value)"
+			],
+			[
+				"getElem",
+				"getElementById()  (namespace)"
+			],
+			[
+				"create",
+				"createListItem  (function)"
+			],
+			[
+				"content",
+				"content  (variable)"
+			],
+			[
+				"re",
+				"responseXML  (variable)"
+			],
+			[
+				"s",
+				"status  (variable)"
+			],
+			[
+				"res",
+				"responseText  (variable)"
+			],
+			[
+				"resp",
+				"responseText"
+			],
+			[
+				"font",
+				"font: font-variant: normal/small-caps"
+			],
+			[
+				"inher",
+				"inherit  (value)"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"get",
+				"getBeers  (function)"
+			],
+			[
+				"inli",
+				"inline-block  (value)"
+			],
+			[
+				"in",
+				"inherit  (value)"
+			],
+			[
+				"div",
+				"div>  (element)"
+			],
+			[
+				"footer",
+				"footer  (element)"
+			],
+			[
+				"section",
+				"section  (element)"
+			],
+			[
+				"iter",
+				"iterator_to_array"
+			],
+			[
+				"deb",
+				"debug"
+			],
+			[
+				"un",
+				"unachievedmedls"
+			],
+			[
+				"unac",
+				"unachievedmedls"
+			],
+			[
+				"fore",
+				"foreach: foreach …"
+			],
+			[
+				"array_inter",
+				"array_intersect"
+			],
+			[
+				"__to",
+				"__toString"
+			],
+			[
+				"medlId",
+				"medlId"
+			],
+			[
+				"die",
+				"die"
+			],
+			[
+				"sess",
+				"session_destroy"
+			],
+			[
+				"WE",
+				"westjet_location"
+			],
+			[
+				"session_st",
+				"session_start"
+			],
+			[
+				"set",
+				"setcookie"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"http_par",
+				"http_parse_headers"
+			],
+			[
+				"curl_get",
+				"curl_getinfo"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"va",
+				"var_dump"
+			],
+			[
+				"url",
+				"urlencode"
+			],
+			[
+				"di",
+				"die"
+			],
+			[
+				"curl",
+				"curl_setopt"
+			],
+			[
+				"count",
+				"array_count_values"
+			],
+			[
+				"erro",
+				"error_reporting"
+			],
+			[
+				"in_ar",
+				"in_array"
+			],
+			[
+				"iss",
+				"isset"
+			],
+			[
+				"err",
+				"errorMessageArray"
+			],
+			[
+				"form",
+				"form"
+			],
+			[
+				"for",
+				"for: for (…) {…}"
+			],
+			[
+				"strtok",
+				"strtok"
+			],
+			[
+				"substr",
+				"substr"
+			],
+			[
+				"cur",
+				"curl_setopt"
+			],
+			[
+				"urle",
+				"urlencode"
+			],
+			[
+				"curl_s",
+				"curl_setopt"
+			],
+			[
+				"product",
+				"products"
+			],
+			[
+				"prod",
+				"product"
+			],
+			[
+				"pri",
+				"pricing"
+			],
+			[
+				"box",
+				"box"
+			],
+			[
+				"meta",
+				"META"
+			],
+			[
+				"th",
+				"this"
+			],
+			[
+				"_",
+				"$_: POST['…']"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "ajax.js",
+			"settings":
+			{
+				"buffer_size": 2088,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 768,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test.php",
+			"settings":
+			{
+				"buffer_size": 141,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "class.beers.php",
+			"settings":
+			{
+				"buffer_size": 2628,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 311.0,
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Disable Package"
+			],
+			[
+				"pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"packag",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Code Folding: Fold Tag Attributes"
+			],
+			[
+				"file",
+				"File: Rename"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"gist",
+				"Gist: Open Gist"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/dan/Documents/Web/beers/footer.php",
+		"/Users/dan/Documents/Web/beers/beer.php",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/Controller/PromotionsController.php",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Layouts/knockout.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Layouts/promotions.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Promotions/mobile/round-one.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/Config/routes.php",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Promotions/app_star.ctp",
+		"/Users/dan/Documents/Web/beers/class.beers.php",
+		"/Users/dan/Documents/Web/beers/class.users.php",
+		"/Users/dan/Documents/Web/wapple/app/Config/routes.php",
+		"/Users/dan/Documents/Web/wapple/base.css",
+		"/Users/dan/Documents/Web/wapple/app/View/Elements/contact-form.ctp",
+		"/Users/dan/Documents/Web/wapple/app/View/Pages/blog.ctp",
+		"/Users/dan/Documents/Web/wapple/app/View/Pages/hero-navigation.ctp",
+		"/Users/dan/Documents/Web/wapple/app/Controller/PagesController.php",
+		"/Users/dan/Dropbox/Photos/adsinapps/index.html",
+		"/Users/dan/Documents/Web/wapple/app/Config/core.php",
+		"/Users/dan/Documents/Web/wapple/states.css",
+		"/Users/dan/Documents/Web/wapple/modules.css",
+		"/Users/dan/Documents/Web/wapple/app/View/Pages/work.ctp",
+		"/Users/dan/Documents/Web/wapple/app/View/Pages/contact.ctp",
+		"/Users/dan/Documents/Web/wapple/layout.css",
+		"/Users/dan/Documents/Web/wapple/index.html",
+		"/Users/dan/Documents/Web/wapple/app/View/Layouts/wapple.ctp",
+		"/Users/dan/Documents/Web/wapple/app/Config/database.php",
+		"/Users/dan/Documents/Web/wapple/app/Config/database.php.default",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Promotions/appStar.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Promotions/mobile/app_star.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Promotions/mobile/appStar.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/css/mobile/oscars.css",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/Controller/promotions.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/Controller/index.ctp",
+		"/Users/dan/Documents/Web/beers/beers.css",
+		"/Users/dan/Documents/Web/beers/user_login.php",
+		"/Users/dan/Documents/Web/beers/index.php",
+		"/Users/dan/Dropbox/Kuga/kuga.html",
+		"/Users/dan/Documents/Web/beers/beers.js",
+		"/Users/dan/Documents/Web/beers/submission.js",
+		"/Users/dan/Documents/Web/beers/constants.inc.php",
+		"/Users/dan/Documents/Web/beers/db_connection.php",
+		"/Users/dan/Documents/Web/beers/index.html",
+		"/Users/dan/Documents/Web/wapple/normalize.css",
+		"/Users/dan/Dropbox/Volvo V40/v40.html",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Layouts/platforms.ctp",
+		"/Users/dan/Library/Application Support/Sublime Text 2/Packages/User/Base File.sublime-settings",
+		"/Users/dan/Library/Application Support/Sublime Text 2/Packages/User/Side Bar.sublime-settings",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Layouts/oscars.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Oscars/index.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Platforms/index2.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Help/mobile/android.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/css/mobile/base.less",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/Controller/HelpController.php",
+		"/Users/dan/Library/Application Support/Sublime Text 2/Packages/User/Global.sublime-settings",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Elements/mobile/footer.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/css/mobile/manual.less",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Help/mobile/ios.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/Controller/PlatformsController.php",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/Config/PlatformsController.php",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Platforms/index.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/css/platforms.css",
+		"/Users/dan/Library/Application Support/Sublime Text 2/Packages/Default/Global.sublime-settings",
+		"/Users/dan/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Platforms/alt.html",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/Controller/PagesController.php",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Helper/DidlrHelper.php",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/Controller/platforms.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/Controller/OscarsController.php",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Oscars/old_slider.html",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/Controller/UsersController.php",
+		"/Volumes/dan-2/www/didlr.com/branches/medls/app/webroot/css/mobile/base.less",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/js/app.js",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/js/mobile/app.js",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/css/medls.less",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Elements/mobile/user_links_alt.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Elements/mobile/footer_nav.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/css/mobile/navigation.less",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Layouts/mobile.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Didl/mobile/view.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Elements/stream.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Elements/side_links.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Elements/mobile/user_links.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Elements/user_tile.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Elements/mobile/top_nav.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Users/mobile/medls.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/css/mobile/medls.less",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Elements/mobile/brand.ctp",
+		"/Users/dan/Library/Application Support/Sublime Text 2/Packages/SideBarEnhancements/messages/11.13.2012.1305.0.txt",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Users/view.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/css/mobile/single_medl.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Users/mobile/single_medl.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Users/mobile/medls.less",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/Controller/m_medls.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Users/mobile/m_medls.ctp",
+		"/Users/dan/Desktop/usermedls.txt",
+		"/Users/dan/Desktop/medls.txt",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/Controller/AppController.php",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Users/single_medl.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Pages/index.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/Controller/DiscoverController.php",
+		"/Users/dan/Dropbox/CX5/slider.html",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Users/mobile/register.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/Controller/single_medl.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/Controller/DidlController.php",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Layouts/default.ctp",
+		"/Users/dan/Dropbox/Wapple/brendan-idea.txt",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/View/Elements/medl-brief.ctp",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/css/master.css",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/css/homepage.less",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/css/draw.less",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/css/edit_profile.less",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/css/didlr.css",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/css/core.less",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/css/control.less",
+		"/Volumes/dan-1/www/didlr.com/branches/medls/app/webroot/css/colours.less",
+		"/Users/dan/Documents/Web/jekyllblog/assets/style.css",
+		"/Users/dan/Documents/Web/jekyllblog/_layouts/style.css",
+		"/Users/dan/Documents/Web/wordpress/wp-content/themes/didlr/_/inc/nav.php",
+		"/Users/dan/Desktop/saxo_diamond_quote.txt",
+		"/Users/dan/Documents/Web/movies/app/webroot/favicon.ico",
+		"/Users/dan/Documents/Web/wordpress/wp-content/themes/didlr/_/inc/meta_single.php",
+		"/Users/dan/Documents/Web/wordpress/wp-content/themes/didlr/_/inc/meta.php",
+		"/Users/dan/Documents/Web/ms/index2.html",
+		"/Users/dan/Documents/Web/ms/index.html",
+		"/Volumes/dan-1/www/didlr/trunk/app/View/Elements/mobile/home_stream.ctp",
+		"/Volumes/dan-1/www/didlr/trunk/app/View/Elements/mobile/stream.ctp",
+		"/Volumes/dan-1/www/didlr/trunk/app/webroot/css/mobile/forms.less",
+		"/Volumes/dan-1/www/didlr/trunk/app/webroot/css/mobile/header.less"
+	],
+	"find":
+	{
+		"height": 33.0
+	},
+	"find_in_files":
+	{
+		"height": 86.0,
+		"include_history":
+		[
+			""
+		],
+		"location_history":
+		[
+			"<open folders>",
+			"/Volumes/dan-1/www/didlr/trunk/app/View",
+			"/Volumes/dan-1/www/didlr/trunk/app/webroot/css",
+			"<open folders>",
+			"/Volumes/dan-1/www/didlr/trunk/app/View/Elements",
+			"/Volumes/dan-1/www/didlr/trunk/app/webroot/css/mobile",
+			"/Volumes/dan-1/www/didlr/trunk/app/webroot/css",
+			"/",
+			"app",
+			"<open files>",
+			"/Volumes/dan-1/www/didlr/branches/mobile-site/app",
+			"<open files>",
+			"<open folders>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".deca",
+			".round-illustration",
+			"mc",
+			".mega",
+			"input",
+			".snark",
+			"#fight",
+			"a",
+			"button",
+			"fight",
+			"copyright",
+			"mega",
+			"header",
+			"footer",
+			"root",
+			"DESIGN",
+			"copyright",
+			"thumb",
+			"shareoptions",
+			"shareoption",
+			"share",
+			"medls",
+			"facebook",
+			"isAuthor",
+			"user",
+			"debug",
+			"userDetails",
+			"medls",
+			"following",
+			"medlCount",
+			"usermedls",
+			"side_link",
+			"\\",
+			"side_links",
+			"sidelink",
+			"h2",
+			"#footer",
+			"a:hover",
+			"footer",
+			"#sidebar",
+			"#side",
+			"#page-",
+			".content",
+			"pagination",
+			"sidebar",
+			".post h2",
+			"#page-w",
+			"header",
+			"::",
+			"footer",
+			"h2",
+			"footer",
+			"No didls",
+			".loggedOut",
+			".loggedOUt",
+			"forgotPassword",
+			"sign-up",
+			"h3",
+			".static_links",
+			"static_links",
+			"static",
+			"Draw on smartphone",
+			"\"Draw on smartphone\"",
+			"sharingIcons",
+			"appiPhone",
+			"sharingIcons",
+			"no didls",
+			"[data-tren",
+			"play",
+			"pagination",
+			".bio",
+			"forgot",
+			"p",
+			".forgotpassword",
+			".forgot",
+			".drawsharetext",
+			".static_links",
+			"header",
+			"#header",
+			"#controls",
+			"..",
+			"desc",
+			"$f",
+			"followers",
+			"following",
+			".sharing",
+			".download",
+			"header",
+			".showSearches",
+			".showsearches",
+			".download-app",
+			".btn",
+			".trends",
+			"limit",
+			".user-pro",
+			".profile",
+			"h1",
+			"header",
+			".screen",
+			"#search",
+			".download",
+			".follow",
+			".follow-btn",
+			".user-primary",
+			"h1",
+			"appiPhone",
+			".panel",
+			"object",
+			"head",
+			".panel",
+			"#footer-navigation",
+			".panel",
+			"header",
+			"grey",
+			"footer a img",
+			"logout",
+			"#didl p",
+			".forgot",
+			".usp",
+			".deleteDidl",
+			".adminPanel",
+			".deleteDidl",
+			".adminPanel",
+			"log",
+			"logoout",
+			".flagDidl",
+			".flag",
+			".flat"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"<span=\"rdesign\">DESIGN</span>",
+			"$data",
+			"dan",
+			"last_name",
+			"first_name",
+			"a href=\"",
+			">",
+			"<",
+			"&amp;",
+			"\">",
+			"&amp;",
+			"</a></li>",
+			"<li><a href=\"",
+			"</a></li>",
+			"<li><a",
+			"<li a",
+			"&amp;",
+			">",
+			"</a>",
+			"<a href=\"",
+			"styelsheets/960_16_col.css",
+			"</blockquote>",
+			"<blockquote>",
+			"pricing",
+			"59805"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "ajax.js",
+					"settings":
+					{
+						"buffer_size": 2088,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1248,
+								1248
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 334.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.php",
+					"settings":
+					{
+						"buffer_size": 768,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								715,
+								715
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "test.php",
+					"settings":
+					{
+						"buffer_size": 141,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								138,
+								138
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "class.beers.php",
+					"settings":
+					{
+						"buffer_size": 2628,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2599,
+								2599
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2083.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 28.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.sftp":
+	{
+		"height": 98.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"strea",
+				"app/View/Elements/mobile/stream.ctp"
+			],
+			[
+				"app",
+				"app/webroot/js/mobile/app.js"
+			],
+			[
+				"",
+				"app/View/Elements/mobile/brand.ctp"
+			],
+			[
+				"footer",
+				"app/View/Elements/mobile/footer.ctp"
+			],
+			[
+				"scr",
+				"app/sass/screen.scss"
+			],
+			[
+				"base",
+				"app/sass/_base.scss"
+			],
+			[
+				"_footer",
+				"app/sass/_footer.scss"
+			],
+			[
+				"layout",
+				"app/View/Layouts/mobile.ctp"
+			],
+			[
+				"didl",
+				"app/View/Elements/mobile/didl.ctp"
+			],
+			[
+				"stream",
+				"app/View/Elements/mobile/stream.ctp"
+			],
+			[
+				"styles",
+				"style.css"
+			],
+			[
+				"style",
+				"style.css"
+			],
+			[
+				"single",
+				"single.php"
+			],
+			[
+				"man",
+				"wp7-manual.html"
+			],
+			[
+				"sin",
+				"single.html"
+			],
+			[
+				"single.",
+				"single.html"
+			],
+			[
+				"sty",
+				"style.css"
+			],
+			[
+				"inde",
+				"index.html"
+			],
+			[
+				"navi",
+				"sass/_navigation.scss"
+			],
+			[
+				"header",
+				"sass/_header.scss"
+			],
+			[
+				"index",
+				"index.html"
+			],
+			[
+				"invoic",
+				"invoice.html"
+			],
+			[
+				"about",
+				"about.html"
+			],
+			[
+				"scre",
+				"sass/screen.scss"
+			],
+			[
+				"footer.",
+				"wp-content/themes/neutrals/footer.php"
+			],
+			[
+				"style.",
+				"wp-content/themes/Blank/style.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 224.0,
+	"status_bar_visible": true
+}
