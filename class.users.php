@@ -35,24 +35,21 @@ class Users
 	public function addUser()
 	{
 		$username = strip_tags($_POST['username']);
-		//$viewed = strip_tags($_POST['film-viewed']);
-		//$rating = strip_tags($_POST['film-rating']);
-		//$summary = $_POST['film-summary'];
+		$email = strip_tags(sha1($_POST['email']));
 		
-		$sql = "INSERT INTO users
-					(user_name)
-				VALUES(:name)";
+		$sql = "INSERT INTO users (user_name, user_email)
+				VALUES(:name, :email)";
 
 		try 
 		{
 			$stmt = $this->_db->prepare($sql);
 			$stmt->bindParam(':name', $username, PDO::PARAM_STR);
-			//$stmt->bindParam(':password', $password, PDO::PARAM_STR);		
+			$stmt->bindParam(':email', $email, PDO::PARAM_STR);
 			$stmt->execute();
 			$stmt->closeCursor();
 
 			$userID = $this->_db->lastInsertId();
-			$url = dechex($userID);
+			$_SESSION['userid'] = $userID;
 		}
 		catch(PDOException $e)
 		{
@@ -92,9 +89,28 @@ class Users
 		}
 	}
 
-	public function getUserId($username = 'daniel') 
+	public function getUserId($username) 
 	{
-		
-		return $userId;
+		$sql = "SELECT user_id FROM users where user_name = :user";
+
+		try {
+			$stmt = $this->_db->prepare($sql);
+			$stmt->bindParam(':user', $username, PDO::PARAM_STR);
+			$stmt->execute();
+			$stmt->bindColumn('user_id', $userId);
+			$stmt->fetch();
+			$stmt->closeCursor();
+			
+			$_SESSION['userid'] = $userId;
+
+			return $userId;
+		}
+		catch(PDOException $e) {
+			return false;
+		}
+	}
+
+	public function test() {
+		return 'hello';
 	}
 }

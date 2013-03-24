@@ -20,15 +20,25 @@ ul {list-style: none;}
   clear: both;
 }		
 
-body {
-	margin: 1em auto;
-	width: 90%;
+.row {
+	padding: 0.5em 5%;
+}
 
+body {
+	margin: 0 auto;
 	background: #E5E5DF;
 	color: #423C33;
 	line-height: 1.4;
 	font-size: 120%;
 	font-family: "freight-sans-pro-1","freight-sans-pro-2", sans-serif;
+}
+
+header {
+	background-color: rgba(0,0,0,0.1);
+}
+
+form {
+	background-color: rgba(0,0,0,0.2);
 }
 
 h1 {
@@ -45,6 +55,11 @@ p {
 	margin-bottom: 1em;
 }
 
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
 .intro {
 	font-size: 80%;
 	text-align: center;
@@ -54,7 +69,11 @@ label {
 	margin-bottom: 0.5em;
 }
 
-input[type="text"], input[type="password"]{
+form input:first-child {
+	margin-bottom: 0.5em;
+}
+
+input[type="text"], input[type="email"], input[type="password"]{
 	display: inline-block;
 	width: 85%;
 	border: 1px solid #fff;
@@ -62,9 +81,8 @@ input[type="text"], input[type="password"]{
 	float: left;
 	height: 44px;
 	padding: 3px 5px;
-	margin-bottom: 0.5em;
 
-	font-family: "freight-sans-pro-1","freight-sans-pro-2", sans-serif;
+	font-family: inherit;
 	font-size: 1em;
 
 	border-top-left-radius: 4px;
@@ -78,6 +96,7 @@ button {
 	font: inherit;
 	font-weight: 500;
 	border: inherit;
+	cursor: pointer;
 }
 
 .button {
@@ -97,9 +116,22 @@ button {
 	line-height: 38px;
 }
 
+.content {
+	background-color: rgba(255,255,255,1);
+}
 
 #beers li {
 	margin-bottom: 0.5em;
+}
+
+.paginate {
+	display: block;
+	background-color: #DC6F61;
+	border-radius: 4px;
+	color: #fff;
+	height: 44px;
+	line-height: 44px;		
+	text-align: center;
 }
 
 .copyright {

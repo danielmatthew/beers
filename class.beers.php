@@ -27,7 +27,7 @@ class Beers
 	}
 	
 
-	public function getBeers($userId = null)
+	public function getBeers($userId = 1)
 	{
 		$sql = "SELECT *
 				FROM beers
@@ -44,8 +44,8 @@ class Beers
 				$beerName = $row['name'];
 				$beerRating = $row['rating'];
 				$beerDescription = $row['description'];
-				//renderBeerItem($beerName);				
-				echo '<li id="'.$beerId.'">' . $beerName . '</li>';
+				$this->drawBeerItem($beerId, $beerName);
+				$_SESSION['beerId'] = $row['id'];
 			}
 			
 			$stmt->closeCursor();
@@ -54,32 +54,58 @@ class Beers
 		{
 			echo "Something went wrong. ", $db->errorInfo;	
 		}
+	}
 
+	public function getFiveMore($userId = 1, $offset = 10) {
+		$sql = "SELECT *
+				FROM beers
+				WHERE user_id = ".$userId."
+				ORDER BY id DESC 
+				LIMIT 5 
+				OFFSET ".$offset;
+				
+		if($stmt = $this->_db->prepare($sql))
+		{
+			$stmt->execute();
+			
+			// while($row = $stmt->fetch(PDO::FETCH_ASSOC))
+			// {
+			// 	$moreBeers['beerName'] = $row['name'];
+			// }
+			$moreBeers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+			//print_r($moreBeers);
+
+			echo json_encode($moreBeers);
+			$stmt->closeCursor();
+		}
+		else 
+		{
+			echo "Something went wrong. ", $db->errorInfo;	
+		}
+		
+	}
+
+	private function drawBeerItem($beerId, $beerName) 
+	{
+		echo '<li id="'.$beerId.'">'.$beerName.'</li>';	
 	}
 
 	/**
 	* Adds new beer to database
 	* @return mixed: ID of new film on success
 	*/
-	
 	public function addBeer()
 	{
 		$beerName = strip_tags($_POST['beerName']);
-		//$viewed = strip_tags($_POST['film-viewed']);
-		//$rating = strip_tags($_POST['film-rating']);
-		//$summary = $_POST['film-summary'];
 		
-		$sql = "INSERT INTO beers
-					(name)
-				VALUES(:name)";
+		$sql = "INSERT INTO beers (name) VALUES(:name)";
 		
 		try 
 		{
 			$stmt = $this->_db->prepare($sql);
-			$stmt->bindParam(':name', $beerName, PDO::PARAM_STR);		
-			//$stmt->bindParam(':rating', $rating, PDO::PARAM_INT);		
-			//$stmt->bindParam(':viewed', $viewed, PDO::PARAM_STR);		
-			//$stmt->bindParam(':summary', $summary, PDO::PARAM_STR);		
+			$stmt->bindParam(':name', $beerName, PDO::PARAM_STR);			
 			$stmt->execute();
 			$stmt->closeCursor();
 
@@ -89,5 +115,17 @@ class Beers
 		{
 			return $e->getMessage();
 		}
+	}
+
+	public function generateTestData()
+	{
+		if(isset($_GET['text']))
+		{
+			$text = $_GET['text'];
+		}
+		else {
+			$text = "No text set";
+		}		
+		return $text;
 	}
 }
