@@ -7,7 +7,16 @@ class Beers
 	* @var object
 	*/
 	private $_db;
-	
+	private $_offsetCounter;
+
+	public function getOffsetCounter() {
+		return $this->_offsetCounter;
+	}
+
+	public function setOffsetCounter() {
+		$this->_offsetCounter = 10;
+	}
+
 	/**
 	* Checks for database object and creates one if none is found
 	* @param object $db
@@ -24,6 +33,9 @@ class Beers
 			$dsn = 'mysql:host='.DB_HOST.'dbname='.DB_NAME;
 			$this->_db = new PDO($dsn, DB_USER, DB_PASS);
 		}
+
+		$this->setOffsetCounter(0);
+
 	}
 	
 
@@ -56,27 +68,19 @@ class Beers
 		}
 	}
 
-	public function getFiveMore($userId = 1, $offset = 10) {
+	public function getFiveMore($userId = 1, $offset) {
 		$sql = "SELECT *
 				FROM beers
 				WHERE user_id = ".$userId."
 				ORDER BY id DESC 
 				LIMIT 5 
-				OFFSET ".$offset;
-				
+				OFFSET ". $offset;
+
 		if($stmt = $this->_db->prepare($sql))
 		{
 			$stmt->execute();
-			
-			// while($row = $stmt->fetch(PDO::FETCH_ASSOC))
-			// {
-			// 	$moreBeers['beerName'] = $row['name'];
-			// }
 			$moreBeers = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-			//print_r($moreBeers);
-
+			$this->setOffsetCounter(5);
 			echo json_encode($moreBeers);
 			$stmt->closeCursor();
 		}
@@ -84,7 +88,6 @@ class Beers
 		{
 			echo "Something went wrong. ", $db->errorInfo;	
 		}
-		
 	}
 
 	private function drawBeerItem($beerId, $beerName) 
