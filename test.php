@@ -5,4 +5,4 @@ $beer = new Beers($db);
 
 $offset = $_GET['offset'];
 
-json_encode($beer->getFiveMore(1, $offset));
+json_encode($beer->paginate(5, 1, $offset));

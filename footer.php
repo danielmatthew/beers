@@ -1,17 +1,14 @@
 	<footer class="row">
+		<a class="button" href="logout.php">Logout</a>
 		<?php 
 		if(isset($_SESSION['userid'])){
-			echo 'Logged in as:' . $_SESSION['userid']; 
-		}
-
-		if(isset($_SESSION['userid'])){
-			echo 'Last beer ID:' . $_SESSION['beerId']; 
+			echo '<p>Currently logged in as User #' . $_SESSION['userid'].'</p>'; 
 		}
 	?>
 		<p class="copyright">&copy; 2013 Dashing Rogues</p>
 	</footer>	
 </body>
-	<script type="text/javascript" src="ajax.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>
 	<script type="text/javascript">
 	  (function() {
 	    var config = {

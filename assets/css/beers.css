@@ -47,8 +47,6 @@ h1 {
 	font-family: "freight-micro-pro-1","freight-micro-pro-2";
 	font-size: 150%;
 	font-weight: normal;
-	text-align: center;
-	text-transform: uppercase;
 }
 
 p {
@@ -117,14 +115,29 @@ button {
 }
 
 .content {
-	background-color: rgba(255,255,255,1);
+	
 }
 
 #beers li {
 	margin-bottom: 0.5em;
+	padding: 0.25em 0;
+	
+	background-color: #fff;
+	vertical-align: top;
+	
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.125);
+	box-shadow: 0 1px 1px rgba(0,0,0,0.125);
 }
 
-.paginate {
+#beers li h1 {
+	font-size: 1em;
+	display: inline-block;
+	text-transform: none;
+	margin: 0;
+	vertical-align: top;
+}
+
+.btn {
 	display: block;
 	background-color: #DC6F61;
 	border-radius: 4px;
@@ -140,10 +153,20 @@ button {
 }
 
 .fade {
-	-webkit-animation: backgroundFade 5s;
+	-webkit-animation: backgroundFade 2s;
 }
 
 @-webkit-keyframes backgroundFade {
-	0% {background-color: yellow;}
-	100% {background-color: inherit;}
+	0% {background-color: #f7c12d;}
+	100% {background-color: #fff;}
+}
+
+
+.grow {
+	-webkit-animation: expand 2s;
+}
+
+@-webkit-keyframes expand {
+	0% {height: 0px;}
+	100% {height: auto;}
 }

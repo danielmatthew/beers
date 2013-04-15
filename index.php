@@ -25,7 +25,7 @@ include('header.php');
 		?>
 	</ul>
 	<div class="pagination group">
-		<a id="add-five" class="paginate">More</a>
+		<a id="paginate" class="btn">More</a>
 	</div>
 </section>
 <?php include('footer.php');?>

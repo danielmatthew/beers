@@ -7,15 +7,7 @@ class Beers
 	* @var object
 	*/
 	private $_db;
-	private $_offsetCounter;
 
-	public function getOffsetCounter() {
-		return $this->_offsetCounter;
-	}
-
-	public function setOffsetCounter() {
-		$this->_offsetCounter = 10;
-	}
 
 	/**
 	* Checks for database object and creates one if none is found
@@ -34,8 +26,6 @@ class Beers
 			$this->_db = new PDO($dsn, DB_USER, DB_PASS);
 		}
 
-		$this->setOffsetCounter(0);
-
 	}
 	
 
@@ -44,7 +34,7 @@ class Beers
 		$sql = "SELECT *
 				FROM beers
 				WHERE user_id = ".$userId."
-				ORDER BY id DESC LIMIT 10";
+				ORDER BY date_drunk DESC LIMIT 10";
 				
 		if($stmt = $this->_db->prepare($sql))
 		{
@@ -68,19 +58,18 @@ class Beers
 		}
 	}
 
-	public function getFiveMore($userId = 1, $offset) {
+	public function paginate($numberOfResults, $userId = 1, $offset) {
 		$sql = "SELECT *
 				FROM beers
 				WHERE user_id = ".$userId."
-				ORDER BY id DESC 
-				LIMIT 5 
-				OFFSET ". $offset;
+				ORDER BY date_drunk DESC 
+				LIMIT ".$numberOfResults." 
+				OFFSET ".$offset;
 
 		if($stmt = $this->_db->prepare($sql))
 		{
 			$stmt->execute();
 			$moreBeers = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			$this->setOffsetCounter(5);
 			echo json_encode($moreBeers);
 			$stmt->closeCursor();
 		}
@@ -92,7 +81,10 @@ class Beers
 
 	private function drawBeerItem($beerId, $beerName) 
 	{
-		echo '<li id="'.$beerId.'">'.$beerName.'</li>';	
+		echo '<li id="'.$beerId.'">';
+		echo '<img src="assets/img/thumb.png">';
+		echo '<h1>'.$beerName.'</h1>';
+		echo '</li>';	
 	}
 
 	/**
@@ -101,14 +93,18 @@ class Beers
 	*/
 	public function addBeer()
 	{
+		$userId = $_SESSION['userid'];
 		$beerName = strip_tags($_POST['beerName']);
+		$dateDrunk = date('Y-m-d');
 		
-		$sql = "INSERT INTO beers (name) VALUES(:name)";
+		$sql = "INSERT INTO beers (user_id, name, date_drunk) VALUES(:user_id, :name, :date_drunk)";
 		
 		try 
 		{
 			$stmt = $this->_db->prepare($sql);
-			$stmt->bindParam(':name', $beerName, PDO::PARAM_STR);			
+			$stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+			$stmt->bindParam(':name', $beerName, PDO::PARAM_STR);
+			$stmt->bindParam(':date_drunk', $dateDrunk, PDO::PARAM_STR);			
 			$stmt->execute();
 			$stmt->closeCursor();
 
@@ -130,5 +126,13 @@ class Beers
 			$text = "No text set";
 		}		
 		return $text;
+	}
+
+	public function getMostPopularBeer() {
+
+	}
+
+	public function getMostPopularBrewer() {
+		
 	}
 }

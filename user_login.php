@@ -11,7 +11,7 @@ if(isset($_SESSION['userid'])) {
 	header('Location: /beers/index.php');
 }
 else {
-	header('Location: /beers/login.php');
+	header('Location: /beers/login.php?error=nouserfound');
 }
 
 //if($_SESSION['username']){

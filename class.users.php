@@ -110,6 +110,31 @@ class Users
 		}
 	}
 
+	public function checkIfUserExists($username)
+	{
+		if (isset($_POST['username'])) {
+			$username = strip_tags($_POST['username']);
+		}
+
+		$sql = "SELECT user_name FROM users WHERE user_name = :username LIMIT 1";
+
+		try {
+			$stmt = $this->_db->prepare($sql);
+			$stmt->bindParam(':username', $username, PDO::PARAM_STR);
+			$stmt->execute();
+			$stmt->closeCursor();
+			if ($stmt->rowCount() == 1) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		catch(PDOException $e) {
+			return false;
+		}
+	}
+
 	public function test() {
 		return 'hello';
 	}

@@ -8,4 +8,5 @@
 			<button id="register-btn" class="button" type="submit">&#10004;</button>
 		</div>
 	</form>
+	<a href="login.php">Or login</a>
 <?php include('footer.php');?>
