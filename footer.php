@@ -1,14 +1,17 @@
 	<footer class="row">
-		<a class="button" href="logout.php">Logout</a>
-		<?php 
-		if(isset($_SESSION['userid'])){
-			echo '<p>Currently logged in as User #' . $_SESSION['userid'].'</p>'; 
-		}
-	?>
+		<div class="meta">
+			<?php 
+				if(isset($_SESSION['userid'])){
+					echo '<p>Currently logged in as user #' . $_SESSION['userid'].'</p>'; 
+				}
+			?>
+			<a href="logout.php">Logout</a>		
+		</div>
+
 		<p class="copyright">&copy; 2013 Dashing Rogues</p>
 	</footer>	
 </body>
-	<script async type="text/javascript" src="assets/js/app.js"></script>
+	<script async src="assets/js/app.js"></script>
 	<script type="text/javascript">
 	  (function() {
 	    var config = {

@@ -13,11 +13,11 @@
 		addEventListeners();
 	}
 
+	// Keeps all our listeners together
 	function addEventListeners() {
 		document.getElementById("add").addEventListener('click', addBeer, false);
 		document.getElementById("paginate").addEventListener('click', paginate, false);		
 	}
-
 
 	// Adds new beer listing to database
 	function addBeer() {
@@ -52,6 +52,8 @@
 				if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
 					var response = JSON.parse(xhr.responseText);
 					console.log("Sucessfully added " + response);
+					var loading = document.getElementById('loading');
+					removeElement(loading);
 					drawList(response);	
 				} 
 				else {
@@ -63,11 +65,12 @@
 		xhr.send(null);
 	}
 
-	// Draws list at load time
-	function drawList(content) {
+	// Define template for list item
+	function drawItem(content) {
 		var thumbnail,
 			name,
-			li = null;
+			drunk,
+			li = null
 
 		var fragment = document.createDocumentFragment();
 
@@ -75,81 +78,44 @@
 			// Create thumbnail
 			thumbnail = document.createElement('img');
 			thumbnail.setAttribute('src', THUMBNAIL_SRC);
+			thumbnail.setAttribute('width', '48px');
+			thumbnail.setAttribute('height', '48px');
 
 			// Create beer name
 			name = document.createElement('h1');
 			name.appendChild(document.createTextNode(content[i].name));
 
+			// Date drunk
+			drunk = document.createElement('span');
+			drunk.appendChild(document.createTextNode(content[i].date_drunk));
+
 			// Create list item
 			li = document.createElement('li');
 			li.appendChild(thumbnail);
 			li.appendChild(name);
+			li.appendChild(drunk);
 
 			fragment.appendChild(li);			
 		}
 
+		return fragment;
+	}
+
+	// Draws list on page load
+	function drawList(content) {
+		var fragment = drawItem(content);
 		document.getElementById("beers").appendChild(fragment);
 	}
 
-
 	// Draws new item at top of list
 	function drawListItem(content) {
-		var thumbnail = null;
-		var name = null;
-
-		var fragment = document.createDocumentFragment();
-
-		// Create thumbnail
-		thumbnail = document.createElement('img');
-		thumbnail.setAttribute('src', THUMBNAIL_SRC);
-
-
-		// Create beer name
-		name = document.createElement('h1');
-		name.appendChild(document.createTextNode(content));
-
-
-		// Create list item
-		li = document.createElement('li');
-		li.className = 'fade';
-		li.appendChild(thumbnail);
-		li.appendChild(name);
-
-		fragment.appendChild(li);
-
-		//Add to top of list
-		//document.getElementById("beers").appendChild(fragment);
+		var fragment = drawItem(content);
 		document.getElementById("beers").insertBefore(fragment, beers.firstChild);
 	}
 
 	// Draws five more items at bottom of list
 	function drawPaginationItems(content) {
-		var thumbnail,
-			name,
-			li = null;
-
-		var fragment = document.createDocumentFragment();
-
-		for (var i = 0; i < content.length; i++) {
-			//Create thumbnail
-			thumbnail = document.createElement('img');
-			thumbnail.setAttribute('src', THUMBNAIL_SRC);
-
-
-			//Create beer name
-			name = document.createElement('h1');
-			name.appendChild(document.createTextNode(content[i].name));
-
-
-			//Create list item
-			li = document.createElement('li');
-			li.className = 'fade';
-			li.appendChild(thumbnail);
-			li.appendChild(name);
-			fragment.appendChild(li);
-		}
-
-		//Add to bottom of list
+		var fragment = drawItem(content);
 		document.getElementById("beers").appendChild(fragment);		
 	}
 
@@ -187,23 +153,14 @@
 		errorMessage.classList.add(slideIn);
 	}
 
-	//Uses Geolocation API to access location
-	function getUserLocation() {
-		navigator.geolocation.getCurrentPosition(printCoords);
-	}
-
-
-	//Aptly named callback function for getUserLocation
-	function printCoords(position) {
-		var latitude = position.coords.latitude;
-		var longitude = position.coords.longitude;
-		console.log(latitude, longitude);
-	}
-
-
 	// Clears specified text input on submission
 	function clearTextInput(textInputName) {
 		var input = document.getElementById(textInputName);
 		input.value = '';
+	}
+
+	// Useful function to remove specified element - suppose could just set innerHtml to ''...
+	function removeElement(el) {
+		el.parentNode.removeChild(el);
 	}
 })();

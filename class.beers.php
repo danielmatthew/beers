@@ -31,7 +31,7 @@ class Beers
 
 	public function getBeers($userId = 1)
 	{
-		$sql = "SELECT id, name
+		$sql = "SELECT id, name, date_drunk
 				FROM beers
 				WHERE user_id = ".$userId."
 				ORDER BY date_drunk DESC LIMIT 10";
@@ -72,7 +72,7 @@ class Beers
 		{
 			$stmt->execute();
 			$moreBeers = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			echo json_encode($moreBeers);
+			echo json_encode(array_reverse($moreBeers));
 			$stmt->closeCursor();
 		}
 		else 
@@ -89,14 +89,49 @@ class Beers
 		echo '</li>';	
 	}
 
-	/**
-	* Adds new beer to database
-	* @return mixed: ID of new film on success
-	*/
-	public function addBeer()
+	public function addBeer() 
 	{
 		$userId = $_SESSION['userid'];
-		$beerName = strip_tags($_POST['beerName']);
+
+		
+
+		$sql = "SELECT id, name, date_drunk
+				FROM beers
+				WHERE user_id = ".$userId." AND ". $this->insert() ." 
+				ORDER BY date_drunk DESC LIMIT 1";
+				
+		if($stmt = $this->_db->prepare($sql))
+		{
+			$stmt->execute();
+			$beers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			echo json_encode(array_reverse($beers));
+
+			//$beers = array();
+			// while($row = $stmt->fetch(PDO::FETCH_ASSOC))
+			// {
+			// 	array_push($beers, $row['id'], $row['name']);
+			// 	// $beerId = $row['id'];
+			// 	// $beerName = $row['name'];
+			// 	// $this->drawBeerItem($beerId, $beerName);
+			// 	// $_SESSION['beerId'] = $row['id'];
+			// }
+			// echo json_encode($beers);
+			$stmt->closeCursor();
+		}
+		else 
+		{
+			echo "Something went wrong. ", $db->errorInfo;	
+		}
+	}
+
+	/**
+	* Adds new beer to database
+	* @return mixed: ID of new beer on success
+	*/
+	private function insert()
+	{
+		$userId = $_SESSION['userid'];
+		$beerName = strip_tags($_REQUEST['beerName']);
 		$dateDrunk = date('Y-m-d');
 		
 		$sql = "INSERT INTO beers (user_id, name, date_drunk) VALUES(:user_id, :name, :date_drunk)";
@@ -110,7 +145,7 @@ class Beers
 			$stmt->execute();
 			$stmt->closeCursor();
 
-			return $beerName;
+			return $id = $this->_db->lastInsertId();
 		}
 		catch(PDOException $e)
 		{
