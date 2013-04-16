@@ -31,7 +31,7 @@ class Beers
 
 	public function getBeers($userId = 1)
 	{
-		$sql = "SELECT *
+		$sql = "SELECT id, name
 				FROM beers
 				WHERE user_id = ".$userId."
 				ORDER BY date_drunk DESC LIMIT 10";
@@ -39,17 +39,19 @@ class Beers
 		if($stmt = $this->_db->prepare($sql))
 		{
 			$stmt->execute();
-			
-			while($row = $stmt->fetch(PDO::FETCH_ASSOC))
-			{
-				$beerId = $row['id'];
-				$beerName = $row['name'];
-				$beerRating = $row['rating'];
-				$beerDescription = $row['description'];
-				$this->drawBeerItem($beerId, $beerName);
-				$_SESSION['beerId'] = $row['id'];
-			}
-			
+			$beers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			echo json_encode(array_reverse($beers));
+
+			//$beers = array();
+			// while($row = $stmt->fetch(PDO::FETCH_ASSOC))
+			// {
+			// 	array_push($beers, $row['id'], $row['name']);
+			// 	// $beerId = $row['id'];
+			// 	// $beerName = $row['name'];
+			// 	// $this->drawBeerItem($beerId, $beerName);
+			// 	// $_SESSION['beerId'] = $row['id'];
+			// }
+			// echo json_encode($beers);
 			$stmt->closeCursor();
 		}
 		else 

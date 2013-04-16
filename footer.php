@@ -8,7 +8,7 @@
 		<p class="copyright">&copy; 2013 Dashing Rogues</p>
 	</footer>	
 </body>
-	<script type="text/javascript" src="assets/js/app.js"></script>
+	<script async type="text/javascript" src="assets/js/app.js"></script>
 	<script type="text/javascript">
 	  (function() {
 	    var config = {

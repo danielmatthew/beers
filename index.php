@@ -14,15 +14,7 @@ include('header.php');
 	</form>
 <section class="content row">
 	<ul id="beers">
-		<?php
-		 	if(isset($_SESSION['userid'])) {
-		 		$beers->getBeers($_SESSION['userid']);
-		 	}
-		 	else {
-		 		echo '<p>No beers added yet - <a href="login.php">please log in!</a></p>';
-		 	}
-			
-		?>
+
 	</ul>
 	<div class="pagination group">
 		<a id="paginate" class="btn">More</a>
