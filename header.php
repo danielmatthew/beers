@@ -18,6 +18,6 @@
 	<link rel="stylesheet" href="assets/css/beers.css">
 </head>
 <body>
-<header class="row">
+<header id="header" class="row">
 	<h1>BYOB</h1>
 </header>

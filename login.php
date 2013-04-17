@@ -5,7 +5,7 @@
 		}
 	?>
 	<p class="row">Please login to begin keeping a record of your beers.</p>
-	<form id="login" class="group row" method="POST" action="user_login.php">
+	<form id="login" class="group row" method="POST" action="actions/user_login.php">
 		<div class="group">
 			<input type="text" id="username" name="username" placeholder="Your username" autocorrect="off" autocomplete="off"></input>
 			<button id="login-btn" class="button" type="submit">&#10004;</button>
