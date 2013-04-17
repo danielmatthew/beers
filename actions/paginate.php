@@ -1,6 +1,6 @@
 <?php
-include_once 'db_connection.php';
-include_once 'class.beers.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/beers/db_connection.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/beers/classes/class.beers.php';
 $beer = new Beers($db);
 
 $offset = $_GET['offset'];

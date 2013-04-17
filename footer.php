@@ -5,7 +5,7 @@
 					echo '<p>Currently logged in as user #' . $_SESSION['userid'].'</p>'; 
 				}
 			?>
-			<a href="logout.php">Logout</a>		
+			<a id="logout">Logout</a>		
 		</div>
 
 		<p class="copyright">&copy; 2013 Dashing Rogues</p>

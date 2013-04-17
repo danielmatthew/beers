@@ -11,10 +11,10 @@ include('header.php');
 
 <section class="content row">
 	<ul id="beers">
-		<p id="loading">Loading content</p>
+		<!-- <p id="loading">Loading content</p> -->
 	</ul>
-	<div class="pagination group">
+<!-- 	<div class="pagination group">
 		<a id="paginate" class="btn">More</a>
-	</div>
+	</div> -->
 </section>
 <?php include('footer.php');?>

@@ -9,14 +9,28 @@
 	window.addEventListener('load', windowLoadHandler, false);
 
 	function windowLoadHandler() {
-		drawLoginForm();
+		doesSessionExist();
 		addEventListeners();
 	}
 
-	// Keeps all our listeners together
+	// Checks if userId exists in PHP session
+	function doesSessionExist() {
+		ajax('actions/check-session.php', function(content){
+			if (content === 1) {
+				drawAddBeerForm();
+				loadBeersBetter();
+				document.getElementById("paginate").addEventListener('click', paginate, false);						
+			}
+			else {
+				drawLoginForm();
+				document.getElementById("login-btn").addEventListener('click', login, false);
+			}
+		});
+	}
+
+	// Adds our load time event listeners
 	function addEventListeners() {
-		document.getElementById("login-btn").addEventListener('click', login, false);
-		document.getElementById("paginate").addEventListener('click', paginate, false);		
+		document.getElementById("logout").addEventListener('click', logout, false);
 	}
 
 	// Renders login form
@@ -40,7 +54,7 @@
 		username.setAttribute('name', 'username');
 		username.setAttribute('type', 'text');
 		username.setAttribute('placeholder', 'Your username');
-
+		username.setAttribute('autocomplete', false);
 		// Create button
 		submit = document.createElement('button');
 		submit.id = 'login-btn';
@@ -107,7 +121,8 @@
 					removeElement(document.getElementById('login'));
 					drawAddBeerForm();
 					document.getElementById("add").addEventListener('click', addBeer, false);
-					loadBeers(response);
+					//loadBeers(response);
+					loadBeersBetter();
 				} 
 				else {
 					console.log("Request was unsuccessful: " + xhr.status);
@@ -120,9 +135,38 @@
 		xhr.send(new FormData(form));		
 	}
 
-	function setUserId(id) {
-
+	// Allows user to logout
+	function logout() {
+		ajax('actions/logout.php', reset);
 	}
+
+	// Redraws UI
+	function reset() {
+		removeElement(document.getElementById('addBeer'));
+		removeElement(document.getElementById('beers'));
+		removeElement(document.getElementById('paginate'));
+		drawLoginForm();
+		document.getElementById("login-btn").addEventListener('click', login, false);
+	}
+
+	// AJAX utility
+	function ajax(url, callback) {
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4) {
+				if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+					callback(JSON.parse(xhr.responseText));
+					console.log("Request to " + url + " succeeded");
+				}
+				else {
+					console.log("Request to " + url + " failed.");
+				}
+			}
+		}
+		xhr.open("GET", url, true);
+		xhr.send();
+	}
+
 
 	// Adds new beer listing to database
 	function addBeer() {
@@ -149,25 +193,11 @@
 		xhr.send(new FormData(form));	
 	}
 
-	// Gets beers from database
-	function loadBeers(userId) {
-		var loading = document.getElementById('loading');
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = function() {
-			if (xhr.readyState == 4) {
-				if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
-					var response = JSON.parse(xhr.responseText);
-					console.log("Sucessfully added " + response);
-					removeElement(loading);
-					drawList(response);	
-				} 
-				else {
-					console.log("Request was unsuccessful: " + xhr.status);
-				} 		
-			}
-		}
-		xhr.open("get", "actions/get-beers.php?userId=" + userId, true);
-		xhr.send(null);
+	// More succint function to get beers from database
+	function loadBeersBetter(userId) {
+		ajax('actions/get-beers.php?userId=1', drawList);
+		drawPaginationButton();
+		document.getElementById("paginate").addEventListener('click', paginate, false);		
 	}
 
 	// Define template for list item
@@ -224,6 +254,20 @@
 		document.getElementById("beers").appendChild(fragment);		
 	}
 
+	// Draws pagination button
+	function drawPaginationButton() {
+		var button = null;
+		var fragment = document.createDocumentFragment();
+
+		button = document.createElement('a');
+		button.id = 'paginate';
+		button.className = 'button';
+		button.appendChild(document.createTextNode("More"));
+
+		fragment.appendChild(button);
+		insertAfter(beers, button);
+	}
+
 	// Renders pagination results
 	function paginate() {
 		if (event.preventDefault) {
@@ -243,9 +287,13 @@
 				}
 			}
 		}
-		xhr.open("get", "paginate.php?offset=" + paginationOffset, true);
+		xhr.open("get", "actions/paginate.php?offset=" + paginationOffset, true);
 		paginationOffset += 5;
 		xhr.send(null);
+	}
+
+	function betterPagination() {
+		ajax('paginate.php?offset=10', drawPaginationItems);
 	}
 
 	// Renders error message for user

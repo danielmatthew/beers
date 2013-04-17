@@ -5,4 +5,6 @@
     session_destroy();
     session_write_close();
 
-    header('Location: /beers/login.php');
+    echo json_encode(1);
+
+    // header('Location: /beers/login.php');
