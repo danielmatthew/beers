@@ -19,7 +19,7 @@
 			if (content === 1) {
 				drawAddBeerForm();
 				loadBeersBetter();
-				document.getElementById("add").addEventListener('click', addBeer, false);
+				document.getElementById("add").addEventListener('click', addBeersBetter, false);
 				document.getElementById("paginate").addEventListener('click', paginate, false);						
 			}
 			else {
@@ -179,33 +179,8 @@
 				}
 			}
 		}
-		xhr.open("GET", url, true);
+		xhr.open("POST", url, true);
 		xhr.send(new FormData(formId));
-	}
-
-	// Adds new beer listing to database
-	function addBeer() {
-		if (event.preventDefault) {
-			event.preventDefault();
-		}
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = function() {
-			if (xhr.readyState == 4) {
-				if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
-					var response = JSON.parse(xhr.responseText);
-					console.log("Sucessfully added " + response);
-					drawListItem(response);
-					clearTextInput("beerName");
-				} 
-				else {
-					console.log("Request was unsuccessful: " + xhr.status);
-					//TODO: Draw error message on page
-				} 		
-			}
-		}
-		xhr.open("post", "actions/add-beer.php", true);
-		var form = document.getElementById("addBeer");
-		xhr.send(new FormData(form));	
 	}
 
 	// Upgraded addBeer function
