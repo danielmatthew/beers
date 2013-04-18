@@ -17,10 +17,7 @@
 	function doesSessionExist() {
 		ajax('actions/check-session.php', function(content){
 			if (content === 1) {
-				drawAddBeerForm();
-				loadBeersBetter();
-				document.getElementById("add").addEventListener('click', addBeersBetter, false);
-				document.getElementById("paginate").addEventListener('click', paginate, false);						
+				buildUI();					
 			}
 			else {
 				drawLoginForm();
@@ -108,45 +105,39 @@
 		insertAfter(headers[0], form);
 	}
 
-	// Allows user to log in
+
+	// Builds UI on success 
 	function login() {
 		if (event.preventDefault) {
 			event.preventDefault();
 		}
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = function() {
-			if (xhr.readyState == 4) {
-				if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
-					var response = JSON.parse(xhr.responseText);
-					console.log("User id is " + response);
-					removeElement(document.getElementById('login'));
-					drawAddBeerForm();
-					document.getElementById("add").addEventListener('click', addBeer, false);
-					loadBeersBetter();
-				} 
-				else {
-					console.log("Request was unsuccessful: " + xhr.status);
-					//TODO: Draw error message on page
-				} 		
-			}
-		}
-		xhr.open("post", "actions/user_login.php", true);
-		var form = document.getElementById("login");
-		xhr.send(new FormData(form));		
+		var login = document.getElementById('login');
+		formDataAjax('actions/user_login.php', buildUI, login);
+		removeElement(document.getElementById('login'));		
 	}
 
 	// Allows user to logout
 	function logout() {
-		ajax('actions/logout.php', reset);
+		ajax('actions/logout.php', resetUI);
 	}
 
-	// Redraws UI
-	function reset() {
+	// Pieces together UI components on user login
+	function buildUI() {
+		drawAddBeerForm();
+		loadBeersBetter();
+
+		document.getElementById("add").addEventListener('click', addBeersBetter, false);
+		document.getElementById("paginate").addEventListener('click', paginate, false);								
+	}
+
+	// Returns UI to 'base' state on user logout
+	function resetUI() {
 		removeElement(document.getElementById('addBeer'));
 		removeElement(document.getElementById('paginate'));
 		drawLoginForm();
 		document.getElementById("login-btn").addEventListener('click', login, false);
-	}
+	}	
+
 
 	// AJAX utility
 	function ajax(url, callback) {
@@ -166,6 +157,8 @@
 		xhr.send();
 	}
 
+	// AJAX utility when dealing with form data 
+	// TODO: Must be a way to wrap this into the previous function
 	function formDataAjax(url, callback, formId) {
 		var xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function() {
@@ -197,7 +190,7 @@
 	function loadBeersBetter(userId) {
 		ajax('actions/get-beers.php?userId=1', drawList);
 		drawPaginationButton();
-		document.getElementById("paginate").addEventListener('click', paginate, false);		
+		document.getElementById("paginate").addEventListener('click', pagination, false);		
 	}
 
 	// Define template for list item
@@ -268,32 +261,10 @@
 		insertAfter(beers, button);
 	}
 
-	// Renders pagination results
-	function paginate() {
-		if (event.preventDefault) {
-			event.preventDefault();
-		}
-
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = function() {
-			if (xhr.readyState == 4) {
-				if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
-					console.log(xhr.responseText);
-					var response = JSON.parse(xhr.responseText);
-					drawPaginationItems(response, 5);
-				}
-				else {
-					console.log("drawList went wrong: " + xhr.status);
-				}
-			}
-		}
-		xhr.open("get", "actions/paginate.php?offset=" + paginationOffset, true);
+	// Renders pagination results	
+	function pagination() {
+		ajax('actions/paginate.php?offset=' + paginationOffset, drawPaginationItems);
 		paginationOffset += 5;
-		xhr.send(null);
-	}
-
-	function betterPagination() {
-		ajax('paginate.php?offset=10', drawPaginationItems);
 	}
 
 	// Renders error message for user
