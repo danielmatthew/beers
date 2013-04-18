@@ -19,6 +19,7 @@
 			if (content === 1) {
 				drawAddBeerForm();
 				loadBeersBetter();
+				document.getElementById("add").addEventListener('click', addBeer, false);
 				document.getElementById("paginate").addEventListener('click', paginate, false);						
 			}
 			else {
@@ -121,7 +122,6 @@
 					removeElement(document.getElementById('login'));
 					drawAddBeerForm();
 					document.getElementById("add").addEventListener('click', addBeer, false);
-					//loadBeers(response);
 					loadBeersBetter();
 				} 
 				else {
@@ -143,7 +143,6 @@
 	// Redraws UI
 	function reset() {
 		removeElement(document.getElementById('addBeer'));
-		removeElement(document.getElementById('beers'));
 		removeElement(document.getElementById('paginate'));
 		drawLoginForm();
 		document.getElementById("login-btn").addEventListener('click', login, false);
@@ -167,6 +166,22 @@
 		xhr.send();
 	}
 
+	function formDataAjax(url, callback, formId) {
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4) {
+				if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+					callback(JSON.parse(xhr.responseText));
+					console.log("Request to " + url + " succeeded");
+				}
+				else {
+					console.log("Request to " + url + " failed.");
+				}
+			}
+		}
+		xhr.open("GET", url, true);
+		xhr.send(new FormData(formId));
+	}
 
 	// Adds new beer listing to database
 	function addBeer() {
@@ -191,6 +206,16 @@
 		xhr.open("post", "actions/add-beer.php", true);
 		var form = document.getElementById("addBeer");
 		xhr.send(new FormData(form));	
+	}
+
+	// Upgraded addBeer function
+	function addBeersBetter() {
+		if (event.preventDefault) {
+			event.preventDefault();
+		}
+		var addBeer = document.getElementById('addBeer');
+		formDataAjax('actions/add-beer.php', drawListItem, addBeer);
+		clearTextInput('beerName');
 	}
 
 	// More succint function to get beers from database

@@ -19,5 +19,5 @@
 </head>
 <body>
 <header id="header" class="row">
-	<h1>BYOB</h1>
+	<h1>byob</h1>
 </header>
