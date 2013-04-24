@@ -1,10 +1,6 @@
 	<footer class="row">
 		<div class="meta">
-			<?php 
-				if(isset($_SESSION['userid'])){
-					echo '<p>Currently logged in as user #' . $_SESSION['userid'].'</p>'; 
-				}
-			?>
+			<p id="meta"></p>
 			<a id="logout">Logout</a>		
 		</div>
 
@@ -12,7 +8,7 @@
 	</footer>	
 </body>
 	<script async src="assets/js/app.js"></script>
-	<script type="text/javascript">
+	<script async type="text/javascript">
 	  (function() {
 	    var config = {
 	      kitId: 'jhq4goh',

@@ -33,14 +33,6 @@ body {
 	font-family: "freight-sans-pro-1","freight-sans-pro-2", sans-serif;
 }
 
-header {
-	background-color: rgba(0,0,0,0.1);
-}
-
-form {
-	background-color: rgba(0,0,0,0.2);
-}
-
 h1 {
 	margin-bottom: 0.5em;
 
@@ -60,8 +52,10 @@ a {
 input[type="text"], input[type="email"], input[type="password"]{
 	display: block;
 	width: 100%;
-	border: 1px solid #fff;
+	border-top: 1px solid rgb(210,210,210);
 	border-right: none;
+	border-bottom: none;
+	border-left: none;
 	float: left;
 	height: 44px;
 	padding: 3px 5px;
@@ -99,7 +93,7 @@ button {
 }
 
 #beers li {
-	border-bottom: 1px solid rgba(0,0,0,0.2);
+	border-bottom: 1px solid rgb(210, 210, 210);
 	margin-bottom: 0.5em;
 	padding: 0.25em 0;
 	
@@ -117,6 +111,7 @@ button {
 
 #beers li span {
 	font-size: 60%;
+	display: none;
 }
 
 .btn {

@@ -14,6 +14,7 @@
 	}
 
 	// Checks if userId exists in PHP session
+	// TODO: Refactor to use sessionStorage - can cut out request to server
 	function doesSessionExist() {
 		ajax('actions/check-session.php', function(content){
 			if (content === 1) {
@@ -31,12 +32,52 @@
 		document.getElementById("logout").addEventListener('click', logout, false);
 	}
 
+	// Renders registration form
+	function drawRegistrationForm() {
+		var form,
+			username,
+			login,
+			submit;
+
+		var fragment = document.createDocumentFragment();
+		var headers = document.getElementsByTagName('header');
+
+		// Create form
+		form = document.createElement('form');
+		form.id = 'register';
+		form.className = 'row group';
+
+		// Create input
+		username = document.createElement('input');
+		username.id = 'username';
+		username.setAttribute('name', 'username');
+		username.setAttribute('type', 'text');
+		username.setAttribute('placeholder', 'Your username');
+		username.setAttribute('autocorrect', 'off');
+		username.setAttribute('autocomplete', 'off');
+		username.setAttribute('autocapitalize', 'off');
+
+		// Create button
+		submit = document.createElement('button');
+		submit.id = 'register-btn';
+		submit.setAttribute('type', 'submit');
+		submit.className = 'button';
+		submit.appendChild(document.createTextNode("Register"));
+
+		// Build it
+		form.appendChild(username);
+		form.appendChild(submit);
+		fragment.appendChild(form);
+
+		insertAfter(headers[0], form);
+	}
+
 	// Renders login form
 	function drawLoginForm() {
 		var form,
 			username,
 			login,
-			submit = null;
+			submit;
 
 		var fragment = document.createDocumentFragment();
 		var headers = document.getElementsByTagName('header');
@@ -52,7 +93,10 @@
 		username.setAttribute('name', 'username');
 		username.setAttribute('type', 'text');
 		username.setAttribute('placeholder', 'Your username');
-		username.setAttribute('autocomplete', false);
+		username.setAttribute('autocorrect', 'off');
+		username.setAttribute('autocomplete', 'off');
+		username.setAttribute('autocapitalize', 'off');
+
 		// Create button
 		submit = document.createElement('button');
 		submit.id = 'login-btn';
@@ -66,6 +110,14 @@
 		fragment.appendChild(form);
 
 		insertAfter(headers[0], form);
+	}
+
+	// DOM Helper to quickly add multiple attributes
+	function addElementAttributes() {
+		// Loop through argument array and add attribute for each
+		for (var i = 0; i < Things.length; i++) {
+			Things[i].setAttribute();
+		};
 	}
 
 	// Renders add beer form
@@ -88,7 +140,7 @@
 		beerName.id = 'beerName';
 		beerName.setAttribute('name', 'beerName');
 		beerName.setAttribute('type', 'text');
-		beerName.setAttribute('placeholder', 'An example pint');
+		beerName.setAttribute('placeholder', 'What are you drinking?');
 
 		// Create button
 		add = document.createElement('button');
@@ -122,18 +174,32 @@
 	}
 
 	// Pieces together UI components on user login
+	// TODO: Make it asynchronous so we're not waiting for either function to return 
 	function buildUI() {
-		drawAddBeerForm();
-		loadBeersBetter();
+		var meta = document.getElementById('meta');
 
-		document.getElementById("add").addEventListener('click', addBeersBetter, false);
+		drawAddBeerForm();
+		loadBeers();
+		meta.innerHTML = "TODO: Show UserID here"
+
+
+		document.getElementById("add").addEventListener('click', addBeer, false);
 		document.getElementById("paginate").addEventListener('click', paginate, false);								
 	}
 
 	// Returns UI to 'base' state on user logout
 	function resetUI() {
+		// Removes all list items from beers UL - could also set beers.innerHTML to empty string
+		var beers = document.getElementById('beers');
+		while (beers.firstChild) {
+		    beers.removeChild(beers.firstChild);
+		}
+
 		removeElement(document.getElementById('addBeer'));
 		removeElement(document.getElementById('paginate'));
+
+		document.getElementById('meta').innerHTML = "";
+
 		drawLoginForm();
 		document.getElementById("login-btn").addEventListener('click', login, false);
 	}	
@@ -145,7 +211,7 @@
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState == 4) {
 				if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
-					callback(JSON.parse(xhr.responseText));
+					callback(JSON.parse(this.responseText));
 					console.log("Request to " + url + " succeeded");
 				}
 				else {
@@ -177,7 +243,7 @@
 	}
 
 	// Upgraded addBeer function
-	function addBeersBetter() {
+	function addBeer() {
 		if (event.preventDefault) {
 			event.preventDefault();
 		}
@@ -187,7 +253,7 @@
 	}
 
 	// More succint function to get beers from database
-	function loadBeersBetter(userId) {
+	function loadBeers(userId) {
 		ajax('actions/get-beers.php?userId=1', drawList);
 		drawPaginationButton();
 		document.getElementById("paginate").addEventListener('click', pagination, false);		
@@ -277,6 +343,7 @@
 		errorMessage.classList.add(slideIn);
 	}
 
+
 	// Clears specified text input on submission
 	function clearTextInput(textInputName) {
 		var input = document.getElementById(textInputName);
@@ -291,4 +358,10 @@
 	function insertAfter(referenceNode, newNode) {
 		referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 	}
+
+	// Utility function to augment objects
+	Function.prototype.method = function(name, func) {
+		this.prototype[name] = func;
+		return this;
+	};
 })();
