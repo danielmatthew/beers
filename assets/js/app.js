@@ -74,42 +74,14 @@
 
 	// Renders login form
 	function drawLoginForm() {
-		var form,
-			username,
-			login,
-			submit;
-
-		var fragment = document.createDocumentFragment();
 		var headers = document.getElementsByTagName('header');
+		var fragment = document.createElement('div');
+		var template = document.getElementById('loginTpl').innerHTML;
+		var html = Mustache.to_html(template);
 
-		// Create form
-		form = document.createElement('form');
-		form.id = 'login';
-		form.className = 'row group';
+		fragment.innerHTML = html;
 
-		// Create input
-		username = document.createElement('input');
-		username.id = 'username';
-		username.setAttribute('name', 'username');
-		username.setAttribute('type', 'text');
-		username.setAttribute('placeholder', 'Your username');
-		username.setAttribute('autocorrect', 'off');
-		username.setAttribute('autocomplete', 'off');
-		username.setAttribute('autocapitalize', 'off');
-
-		// Create button
-		submit = document.createElement('button');
-		submit.id = 'login-btn';
-		submit.setAttribute('type', 'submit');
-		submit.className = 'button';
-		submit.appendChild(document.createTextNode("Submit"));
-
-		// Build it
-		form.appendChild(username);
-		form.appendChild(submit);
-		fragment.appendChild(form);
-
-		insertAfter(headers[0], form);
+		insertAfter(headers[0], fragment);
 	}
 
 	// DOM Helper to quickly add multiple attributes
@@ -211,7 +183,7 @@
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState == 4) {
 				if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
-					callback(JSON.parse(this.responseText));
+					callback(JSON.parse(xhr.responseText));
 					console.log("Request to " + url + " succeeded");
 				}
 				else {
