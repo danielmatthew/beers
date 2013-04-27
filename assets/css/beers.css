@@ -98,12 +98,20 @@ button {
 	padding: 0.25em 0;
 	
 	background-color: #fff;
-	vertical-align: top;	
+	vertical-align: top;
+	overflow:auto;	
+}
+
+#beers img {
+	float:left;
+}
+
+li > div {
+	float: left;
 }
 
 #beers li h1 {
 	font-size: 1em;
-	display: inline-block;
 	text-transform: none;
 	margin: 0;
 	vertical-align: top;
@@ -111,7 +119,6 @@ button {
 
 #beers li span {
 	font-size: 60%;
-	display: none;
 }
 
 .btn {
