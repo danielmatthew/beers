@@ -19,4 +19,5 @@
 	  })();
 	</script>
 	<?php include('login-form-template.php');?>
+	<?php include('list-item-template.php');?>
 </html>

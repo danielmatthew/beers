@@ -1,7 +1,9 @@
-# Beers
+# [Beers](http://danmatthew.co.uk/beers)
+
 This little web-app is both a tool to 'scratch my own itch' and a learning device to help discover the ins-and-outs of modern web application development. I'm hoping to go from Javascript noob to pro* during this process.
 
 *Potentially. 
+
 
 ## Todo:
 * Implement templates with Mustache JS in order to reduce yanky code to build up form elements etc 
