@@ -233,44 +233,17 @@
 
 	// Define template for list item
 	function drawItem(content) {
-		var thumbnail,
-			name,
-			drunk,
-			li = null
+		var template = document.getElementById('beerTpl').innerHTML;
+		var html = Mustache.to_html(template, content);
 
-		var fragment = document.createDocumentFragment();
-
-		for (var i = content.length - 1; i >= 0; i--) {
-			// Create thumbnail
-			thumbnail = document.createElement('img');
-			thumbnail.setAttribute('src', THUMBNAIL_SRC);
-			thumbnail.setAttribute('width', '48px');
-			thumbnail.setAttribute('height', '48px');
-
-			// Create beer name
-			name = document.createElement('h1');
-			name.appendChild(document.createTextNode(content[i].name));
-
-			// Date drunk
-			drunk = document.createElement('span');
-			drunk.appendChild(document.createTextNode(content[i].date_drunk));
-
-			// Create list item
-			li = document.createElement('li');
-			li.appendChild(thumbnail);
-			li.appendChild(name);
-			li.appendChild(drunk);
-
-			fragment.appendChild(li);			
-		}
-
-		return fragment;
+		return html;
 	}
 
 	// Draws list on page load
 	function drawList(content) {
-		var fragment = drawItem(content);
-		document.getElementById("beers").appendChild(fragment);
+		// var fragment = drawItem(content);
+		// document.getElementById("beers").appendChild(fragment);
+		document.getElementById('beers').innerHTML = drawItem(content);
 	}
 
 	// Draws new item at top of list
