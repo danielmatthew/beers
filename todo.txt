@@ -1,7 +1,0 @@
-BEERS
-
-- Username and password validation
-- Check if user exists
-- Auto-suggest on beer names
-- Deletion
-- ???

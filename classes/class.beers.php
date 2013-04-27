@@ -40,7 +40,7 @@ class Beers
 		{
 			$stmt->execute();
 			$beers = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			echo json_encode(array_reverse($beers));
+			echo json_encode($beers);
 
 			//$beers = array();
 			// while($row = $stmt->fetch(PDO::FETCH_ASSOC))
@@ -72,7 +72,7 @@ class Beers
 		{
 			$stmt->execute();
 			$moreBeers = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			echo json_encode(array_reverse($moreBeers));
+			echo json_encode($moreBeers);
 			$stmt->closeCursor();
 		}
 		else 
@@ -92,8 +92,6 @@ class Beers
 	public function addBeer() 
 	{
 		$userId = $_SESSION['userid'];
-
-		
 
 		$sql = "SELECT id, name, date_drunk
 				FROM beers
@@ -132,7 +130,7 @@ class Beers
 	{
 		$userId = $_SESSION['userid'];
 		$beerName = strip_tags($_REQUEST['beerName']);
-		$dateDrunk = date('Y-m-d');
+		$dateDrunk = date('Y-m-d H:i:s');
 		
 		$sql = "INSERT INTO beers (user_id, name, date_drunk) VALUES(:user_id, :name, :date_drunk)";
 		

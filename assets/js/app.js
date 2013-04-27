@@ -234,7 +234,7 @@
 	// Define template for list item
 	function drawItem(content) {
 		var template = document.getElementById('beerTpl').innerHTML;
-		var html = Mustache.to_html(template, content);
+		var html = Mustache.render(template, content);
 
 		return html;
 	}
@@ -248,14 +248,26 @@
 
 	// Draws new item at top of list
 	function drawListItem(content) {
-		var fragment = drawItem(content);
-		document.getElementById("beers").insertBefore(fragment, beers.firstChild);
+		// var fragment = drawItem(content);
+		// document.getElementById("beers").insertBefore(fragment, beers.firstChild);
+		
+		// Get old list content
+		var oldListContent = document.getElementById('beers').innerHTML;
+
+		// New HTML
+		var newHTML = drawItem(content);
+
+		// Glue together
+		document.getElementById('beers').innerHTML = newHTML + oldListContent;
+
+		// document.getElementById('beers').insertBefore(drawItem(content), beers.firstChild);
 	}
 
 	// Draws five more items at bottom of list
 	function drawPaginationItems(content) {
-		var fragment = drawItem(content);
-		document.getElementById("beers").appendChild(fragment);		
+		// var fragment = drawItem(content);
+		document.getElementById('beers').innerHTML += drawItem(content);
+		// document.getElementById("beers").appendChild(fragment);		
 	}
 
 	// Draws pagination button
