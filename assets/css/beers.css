@@ -58,6 +58,7 @@ input[type="text"], input[type="email"], input[type="password"]{
 	border-left: none;
 	float: left;
 	height: 44px;
+	margin-bottom: 0.5em;
 	padding: 3px 5px;
 
 	font-family: inherit;

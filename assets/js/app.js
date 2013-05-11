@@ -23,6 +23,7 @@
 			else {
 				drawLoginForm();
 				document.getElementById("login-btn").addEventListener('click', login, false);
+				document.getElementById("registration-link").addEventListener('click', drawRegistrationForm, false);
 			}
 		});
 	}
@@ -34,42 +35,17 @@
 
 	// Renders registration form
 	function drawRegistrationForm() {
-		var form,
-			username,
-			login,
-			submit;
+		// Hide login form
+		removeElement(document.getElementById('login'));
 
-		var fragment = document.createDocumentFragment();
 		var headers = document.getElementsByTagName('header');
+		var fragment = document.createElement('div');
+		var template = document.getElementById('registerTpl').innerHTML;
+		var html = Mustache.to_html(template);
 
-		// Create form
-		form = document.createElement('form');
-		form.id = 'register';
-		form.className = 'row group';
+		fragment.innerHTML = html;
 
-		// Create input
-		username = document.createElement('input');
-		username.id = 'username';
-		username.setAttribute('name', 'username');
-		username.setAttribute('type', 'text');
-		username.setAttribute('placeholder', 'Your username');
-		username.setAttribute('autocorrect', 'off');
-		username.setAttribute('autocomplete', 'off');
-		username.setAttribute('autocapitalize', 'off');
-
-		// Create button
-		submit = document.createElement('button');
-		submit.id = 'register-btn';
-		submit.setAttribute('type', 'submit');
-		submit.className = 'button';
-		submit.appendChild(document.createTextNode("Register"));
-
-		// Build it
-		form.appendChild(username);
-		form.appendChild(submit);
-		fragment.appendChild(form);
-
-		insertAfter(headers[0], form);
+		insertAfter(headers[0], fragment);		
 	}
 
 	// Renders login form
@@ -89,7 +65,7 @@
 		// Loop through argument array and add attribute for each
 		for (var i = 0; i < Things.length; i++) {
 			Things[i].setAttribute();
-		};
+		}
 	}
 
 	// Renders add beer form
