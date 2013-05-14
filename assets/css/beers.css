@@ -42,7 +42,7 @@ h1 {
 }
 
 p {
-	margin-bottom: 0.5em;
+	margin-bottom: 0.25em;
 }
 
 a {
@@ -79,6 +79,7 @@ button {
 	display: block;
 	float: left;
 	height: 44px;
+	margin-bottom: 0.5em;
 	width: 100%;
 
 	background-color: #DC6F61;
@@ -109,6 +110,7 @@ button {
 
 li > div {
 	float: left;
+	width: 80%;
 }
 
 #beers li h1 {
@@ -122,13 +124,9 @@ li > div {
 	font-size: 60%;
 }
 
-.btn {
-	display: block;
-	background-color: #DC6F61;
-	color: #fff;
-	height: 44px;
-	line-height: 44px;		
-	text-align: center;
+.secondary {
+	background-color: rgba(0,0,0,0.2);
+	width: 100%;
 }
 
 .meta {
@@ -144,7 +142,16 @@ li > div {
 	-webkit-animation: backgroundFade 2s;
 }
 
+.slideIn {
+	-webkit-animation: fadeIn 1s;
+}
+
 @-webkit-keyframes backgroundFade {
 	0% {background-color: #f7c12d;}
 	100% {background-color: #fff;}
+}
+
+@-webkit-keyframes fadeIn {
+	from {opacity:0;}
+	to {opacity: 1;}
 }

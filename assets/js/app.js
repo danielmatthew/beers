@@ -30,34 +30,47 @@
 
 	// Adds our load time event listeners
 	function addEventListeners() {
-		document.getElementById("logout").addEventListener('click', logout, false);
+		// document.getElementById("logout").addEventListener('click', logout, false);
 	}
 
 	// Renders registration form
 	function drawRegistrationForm() {
 		// Hide login form
-		removeElement(document.getElementById('login'));
+		removeElement(document.getElementById('login-div'));
 
 		var headers = document.getElementsByTagName('header');
 		var fragment = document.createElement('div');
 		var template = document.getElementById('registerTpl').innerHTML;
 		var html = Mustache.to_html(template);
 
+		fragment.id = 'register-div';
 		fragment.innerHTML = html;
 
-		insertAfter(headers[0], fragment);		
+		insertAfter(headers[0], fragment);	
+
+		document.getElementById('register').classList.add('slideIn');
+		document.getElementById('login-link').addEventListener('click', drawLoginForm, false);	
 	}
 
 	// Renders login form
 	function drawLoginForm() {
+		// If registration form on page... hide it! 
+		if (document.getElementById('register')) {
+			removeElement(document.getElementById('register-div'));
+		}
+
 		var headers = document.getElementsByTagName('header');
 		var fragment = document.createElement('div');
 		var template = document.getElementById('loginTpl').innerHTML;
 		var html = Mustache.to_html(template);
 
+		fragment.id = 'login-div';
 		fragment.innerHTML = html;
 
 		insertAfter(headers[0], fragment);
+
+		document.getElementById('login').classList.add('slideIn');
+		document.getElementById('registration-link').addEventListener('click', drawRegistrationForm, false);
 	}
 
 	// DOM Helper to quickly add multiple attributes
@@ -217,8 +230,6 @@
 
 	// Draws list on page load
 	function drawList(content) {
-		// var fragment = drawItem(content);
-		// document.getElementById("beers").appendChild(fragment);
 		document.getElementById('beers').innerHTML = drawItem(content);
 	}
 
@@ -229,6 +240,8 @@
 		
 		// Get old list content
 		var oldListContent = document.getElementById('beers').innerHTML;
+
+		
 
 		// New HTML
 		var newHTML = drawItem(content);
@@ -291,10 +304,4 @@
 	function insertAfter(referenceNode, newNode) {
 		referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 	}
-
-	// Utility function to augment objects
-	Function.prototype.method = function(name, func) {
-		this.prototype[name] = func;
-		return this;
-	};
 })();
