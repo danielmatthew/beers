@@ -129,7 +129,7 @@ class Beers
 	private function insert()
 	{
 		$userId = $_SESSION['userid'];
-		$beerName = strip_tags($_REQUEST['beerName']);
+		$beerName = htmlentities(strip_tags(trim($_REQUEST['beerName'])));
 		$dateDrunk = date('Y-m-d H:i:s');
 		
 		$sql = "INSERT INTO beers (user_id, name, date_drunk) VALUES(:user_id, :name, :date_drunk)";
@@ -165,6 +165,10 @@ class Beers
 
 	public function getMostPopularBeer() {
 
+	}
+
+	public function getTopRatedBeer() {
+		
 	}
 
 	public function getMostPopularBrewer() {

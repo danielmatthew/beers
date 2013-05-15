@@ -22,15 +22,13 @@
 			}
 			else {
 				drawLoginForm();
-				document.getElementById("login-btn").addEventListener('click', login, false);
-				document.getElementById("registration-link").addEventListener('click', drawRegistrationForm, false);
 			}
 		});
 	}
 
 	// Adds our load time event listeners
 	function addEventListeners() {
-		// document.getElementById("logout").addEventListener('click', logout, false);
+		
 	}
 
 	// Renders registration form
@@ -49,7 +47,9 @@
 		insertAfter(headers[0], fragment);	
 
 		document.getElementById('register').classList.add('slideIn');
-		document.getElementById('login-link').addEventListener('click', drawLoginForm, false);	
+		document.getElementById('login-link').addEventListener('click', drawLoginForm, false);
+		document.getElementById("register-btn").addEventListener('click', register, false);
+	
 	}
 
 	// Renders login form
@@ -71,6 +71,8 @@
 
 		document.getElementById('login').classList.add('slideIn');
 		document.getElementById('registration-link').addEventListener('click', drawRegistrationForm, false);
+		document.getElementById("login-btn").addEventListener('click', login, false);
+
 	}
 
 	// DOM Helper to quickly add multiple attributes
@@ -141,11 +143,12 @@
 
 		drawAddBeerForm();
 		loadBeers();
-		meta.innerHTML = "TODO: Show UserID here"
+		// meta.innerHTML = "TODO: Show UserID here"
 
 
 		document.getElementById("add").addEventListener('click', addBeer, false);
-		document.getElementById("paginate").addEventListener('click', paginate, false);								
+		document.getElementById("paginate").addEventListener('click', paginate, false);	
+		document.getElementById("logout").addEventListener('click', logout, false);							
 	}
 
 	// Returns UI to 'base' state on user logout
