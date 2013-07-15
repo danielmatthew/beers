@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include_once 'db_connection.php';
 include_once 'classes/class.beers.php';

@@ -8,7 +8,7 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 	font-size: 100%;
 	vertical-align: baseline;
 	background: transparent;
-}							
+}
 
 /*  0F477C */
 
@@ -18,7 +18,7 @@ ul {list-style: none;}
   content: "";
   display: table;
   clear: both;
-}		
+}
 
 .row {
 	padding: 0.5em 5%;
@@ -31,6 +31,23 @@ body {
 	line-height: 1.4;
 	font-size: 120%;
 	font-family: "freight-sans-pro-1","freight-sans-pro-2", sans-serif;
+}
+
+header {
+	position: relative;
+	background: rgba(0,0,0,0.05);
+}
+
+.menu {
+	position: absolute;
+	top: 0.5em;
+	right: 5%;
+	font-size: 150%;
+}
+
+.btn {
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	text-decoration: none;
 }
 
 h1 {
@@ -76,6 +93,7 @@ button {
 }
 
 .button {
+	border-bottom: 2px solid rgba(0,0,0,0.2);
 	display: block;
 	float: left;
 	height: 44px;
@@ -91,17 +109,17 @@ button {
 }
 
 .content {
-	
+
 }
 
 #beers li {
 	border-bottom: 1px solid rgb(210, 210, 210);
 	margin-bottom: 0.5em;
 	padding: 0.25em 0;
-	
+
 	background-color: #fff;
 	vertical-align: top;
-	overflow:auto;	
+	overflow:auto;
 }
 
 #beers img {
