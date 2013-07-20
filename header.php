@@ -19,8 +19,14 @@
 </head>
 <body>
 <header id="header" class="row">
-	<h1>byob</h1>
-	<a class="menu btn" href="#menu">
+	<h1>skol</h1>
+	<a id="menu-btn" class="menu btn" href="#menu">
   		&#9776;
 	</a>
+	<ul id="menu" class="hidden">
+		<li><a >Profile</a></li>
+		<li><a >Stream</a></li>
+		<li><a >News</a></li>
+		<li><a id="logout">Logout</a></li>
+	</ul>
 </header>

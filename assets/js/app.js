@@ -26,6 +26,15 @@
         });
     }
 
+    // We check to see whether we have the user ID stored
+    function isSessionInLocalStorage() {
+        if (localStorage.getItem("userId")) {
+            buildUI();
+        } else {
+            drawLoginForm();
+        }
+    }
+
     // Adds our load time event listeners
     function addEventListeners() {
 
@@ -128,6 +137,7 @@
         }
         var login = document.getElementById('login');
         formDataAjax('actions/user_login.php', buildUI, login);
+
         removeElement(document.getElementById('login'));
     }
 
@@ -143,17 +153,22 @@
     // Pieces together UI components on user login
     // TODO: Make it asynchronous so we're not waiting for either function to return
     function buildUI() {
-        var meta = document.getElementById('meta');
-        var deleteBtns = document.getElementsByClassName('delete-btn');
+        var meta = document.getElementById('meta'),
+            deleteBtns = document.getElementsByClassName('delete-btn'),
+            menuBtn = document.getElementById('menu-btn'),
+            paginateBtn = document.getElementById('paginate'),
+            logoutBtn = document.getElementById('logout');
 
+        localStorage['userId'] = '1';
         drawAddBeerForm();
         loadBeers();
         // meta.innerHTML = "TODO: Show UserID here"
-
-
         document.getElementById("add").addEventListener('click', addBeer, false);
+        menuBtn.addEventListener('click', toggleMenu, false);
+        // addBtn.addEventListener('click', addBeer, false);
         document.getElementById("paginate").addEventListener('click', paginate, false);
         document.getElementById("logout").addEventListener('click', logout, false);
+
 
         // Should probably look into event delegation here!
         for (var i = 0; i < deleteBtns.length; i++) {
@@ -214,6 +229,13 @@
         };
         xhr.open("POST", url, true);
         xhr.send(new FormData(formId));
+    }
+
+    function toggleMenu() {
+        if (event.preventDefault) {
+            event.preventDefault();
+        }
+        document.getElementById('menu').classList.toggle('hidden');
     }
 
     // Upgraded addBeer function

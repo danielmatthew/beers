@@ -1,7 +1,6 @@
 	<footer class="row">
 		<div class="meta">
-			<p id="meta"></p>
-			<a id="logout">Logout</a>		
+			<p id="meta"></p>		
 		</div>
 
 		<p class="copyright">&copy; 2013 Dashing Rogues</p>

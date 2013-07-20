@@ -4,6 +4,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/beers/db_connection.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/beers/classes/class.users.php';
 $user = new Users($db);
 
+// var_dump($_REQUEST['username']);
+
 $user->getUserId($_REQUEST['username']);
 
 // if(isset($_SESSION['userid'])) {
