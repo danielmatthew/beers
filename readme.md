@@ -1,6 +1,7 @@
 # [Beers](http://danmatthew.co.uk/beers)
 
 ## Todo:
+* Implement module pattern as app.js becoming monolithic and unwieldy
 * Port to Meteor
 * Build profile page
 * Start generating and displaying stats: highest rated beer, most popular beer yadda yadda
