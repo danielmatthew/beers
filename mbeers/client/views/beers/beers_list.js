@@ -13,6 +13,6 @@ var beersData = [
 Template.beersList.helpers({
 	// beers: beersData
 	beers: function() {
-		return Beers.find();
+		return Beers.find({}, {sort: {submitted: -1}});
 	}
 });

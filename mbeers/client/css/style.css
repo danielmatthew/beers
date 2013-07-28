@@ -115,18 +115,19 @@ button {
 	display: none;
 }
 
-#beers li {
+.beer {
 	border-bottom: 1px solid rgb(210, 210, 210);
 	margin-bottom: 0.5em;
-	padding: 0.25em 0;
+	padding: 0.25em;
 
 	background-color: #fff;
-	vertical-align: top;
+	vertical-align: middle;
 	overflow:auto;
 }
 
-#beers img {
+.beer img {
 	float:left;
+	margin-right: 0.25em;
 }
 
 li > div {
@@ -134,14 +135,14 @@ li > div {
 	width: 80%;
 }
 
-#beers li h1 {
+.beer h1 {
 	font-size: 1em;
 	text-transform: none;
 	margin: 0;
 	vertical-align: top;
 }
 
-#beers li span {
+.beer li span {
 	font-size: 60%;
 }
 

@@ -16,19 +16,8 @@
 	</script>
 </head>
 <body>
-	<header id="header" class="row">
-		<h1><a href="{{beerListPath}}">skol</a></h1>
-		<a id="menu-btn" class="menu btn" href="#menu">
-	  		&#9776;
-		</a>
-		<ul id="menu" class="hidden">
-			<li><a >Profile</a></li>
-			<li><a >Stream</a></li>
-			<li><a >News</a></li>
-			<li><a id="logout">Logout</a></li>
-		</ul>
-	</header>
+	{{> header}}
 	<section class="content row">
-		{{renderPage}}
+		{{ renderPage }}
 	</section>
 </body>

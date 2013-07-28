@@ -1,0 +1,11 @@
+<template name="header">
+	<header id="header" class="row">
+		<h1><a href="{{beersListPath}}">skol</a></h1>
+		<ul id="menu-btn" class="menu btn">
+		{{#if currentUser}}
+			<li><a href="{{beerAddPath}}">New</a></li>
+		{{/if}}
+			<li>{{loginButtons}}</li>
+		</ul>
+	</header>
+</template>
